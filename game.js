@@ -1,4 +1,3 @@
-
 var sprites = {
   ship: { sx: 0, sy: 0, w: 37, h: 42, frames: 1 },
   missile: { sx: 0, sy: 30, w: 2, h: 10, frames: 1 },
@@ -126,7 +125,7 @@ var Starfield = function (speed, opacity, numStars, clear) {
   // If the clear option is set,
   // make the background black instead of transparent
   if (clear) {
-    starCtx.fillStyle = "#000";
+    starCtx.fillStyle = "#0F0";
     starCtx.fillRect(0, 0, stars.width, stars.height);
   }
 
