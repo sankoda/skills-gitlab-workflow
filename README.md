@@ -1,50 +1,50 @@
-# GitLabフローでリポジトリを管理する
 
-_GitLabフローを理解し、実践的なスキルを習得します。_
 
-## ようこそ
+# ステップ 1: GitHub Pages を有効にする
 
-このコースでは、GitLabフローを用いてリポジトリを効率的に管理する方法を学びます。
-GitLabフローは、チームがよりスムーズに共同作業を行い、デプロイ可能なイテレーションを容易に実現するためのワークフローです。
+# Step1: 機能ブランチをプッシュする
 
-GitHubの機能を活用し、開発プロセスを最適化します。（GitHubでもGitLabフローは利用可能です。）
+_GitLabフローにようこそ_
 
-- 対象者：開発者、DevOps エンジニア、IT 運用担当者、マネージャー、およびチーム。
-- 学習内容：GitLabフローの概要と実践的な利用方法。
-- 構築内容：GitLabフローに基づいたブランチ戦略、マージリクエストを実施します。
-- 前提条件：ブランチ、コミット、プルリクエストについて学習する必要がある場合は、まず「GitHub 入門」を受講してください。
-- 所要時間：このコースは 1 時間以内で完了します。
+## GitLabフロー
 
-このコースでは、次のことを行います。
+[GitLabフロー](https://about.gitlab.com/ja-jp/topics/version-control/what-is-gitlab-flow/)はシンプルなワークフローの1つです。
 
-1.  ベータ版リリースを作成する (フィーチャーブランチからマージリクエストを作成)
-2.  機能ブランチで開発を進める
-3.  マージリクエストでコードレビューを行う
-4.  メインブランチにマージする
-5.  非本番環境ブランチにマージする
-6.  ホットフィックスをコミットする
-7.  ホットフィックスをメインブランチにマージする
-8.  ホットフィックスを非本番環境ブランチにマージする
-9.  本番環境ブランチにマージする
+![GitLab Flow](https://qiita-image-store.s3.amazonaws.com/0/185389/68b5a27b-e32b-d61f-6020-96de3ba1d335.png)
 
-## このコースのはじめかた
+GitLabフローは柔軟なブランチ戦略が特徴です。環境毎のブランチ（prod,nonprod等）や、リリース準備用のブランチを使い分け、開発規模や目的に応じた運用が可能です。GitHub Flowよりも複雑ですが、より高度なリリース管理を実現します。
 
-<!-- For start course, run in JavaScript:
-'https://github.com/new?' + new URLSearchParams({
-  template_owner: 'kuboctopus',
-  template_name: 'gitlab-workflow',
-  owner: '@me',
-  name: 'skills-gitlab-workflow',
-  description: 'My clone repository',
-  visibility: 'public',
-}).toString()
--->
+## ⌨️ やること: GitHub Pages を有効にする
 
-[![start-course](https://user-images.githubusercontent.com/1221423/235727646-4a590299-ffe5-480d-8cd5-8194ea184546.svg)](https://github.com/new?template_owner=kuboctopus&template_name=gitlab-workflow&owner=%40me&name=skills-gitlab-workflow&description=My+clone+repository&visibility=public)
+新しいブラウザタブを開き、このタブの指示を読みながら、2 番目のタブの手順を実行してください。
 
-1.  右クリックしてコースを開始し、新しいタブでリンクを開きます。
-2.  新しいタブでは、ほとんどのプロンプトが自動的に入力されます。
-    *   所有者には、個人アカウントまたはリポジトリをホストする組織を選択します。
-    *   プライベートリポジトリはアクションの時間を使用するため、パブリックリポジトリを作成することをお勧めします。
-    *   フォームの下部にあるリポジトリを作成ボタンをクリックします。
-3.  新しいリポジトリが作成された後、約20秒待ってからページを更新します。新しいリポジトリのREADMEに記載されている手順に従ってください。
+1. リポジトリ名の下にある「設定」をクリックします。
+2. 「コードと自動化」セクションの「Pages」をクリックします。
+3. 「ソース」ドロップダウンメニューから「GitHub Actions」を選択します。
+4. 「コードと自動化」セクションの「Environments」をクリックします。
+5. 「github-pages」をクリックします。
+6. 「Add deployment branch or tag rule」をクリックします。
+7. Name patternに「nonprod」を入力し、「Add rule」をクリックします。
+8. 「Add deployment branch or tag rule」をクリックします。
+9. Name patternに「prod」を入力し、「Add rule」をクリックします。
+
+## ⌨️ やること: base.cssを修正する
+
+1. メインブランチから新しいブランチを作成し、`base.css`内のbody CSS宣言を以下の内容に変更します。これにより、ページの背景が黒になります。
+
+```css
+body {
+    background-color: black;
+}
+```
+
+2. baseブランチとしてmainブランチを選択し、新しいブランチを機能ブランチとしてプルリクエストをオープンします。
+3. 変更内容を説明するためにプルリクエストテンプレートに記入します。
+4. プルリクエストを作成をクリックします。
+
+## ⌨️ やること: プルリクエストをマージする
+
+1. __Merge pull request__ をクリックし、作成した機能ブランチを削除します。
+2. 約20秒待ってから、このページ（指示を受けているページ）を更新してください。GitHub Actionsは自動的に次のステップに更新されます。
+
+
